@@ -27,7 +27,7 @@ uint elem = thread_position_in_grid.x;
 uint bit = ((elem >> 5) < mask_shape[1]) &&
             ((mask[batch * mask_shape[1] + (elem >> 5)] >> (elem & 31)) & 1);
 
-out[batch * inp_shape[1] + elem] = bit ? inp[batch * inp_shape[1] + elem] : -INFINITY;
+out[batch * inp_shape[1] + elem] = bit ? inp[batch * inp_shape[1] + elem] : bfloat16_t(-INFINITY);
 """
 
 _KERNEL = mx.fast.metal_kernel(
