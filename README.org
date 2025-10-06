@@ -1,0 +1,17 @@
+* Installation
+
+#+begin_src bash
+pip install --no-deps outlines==1.2.5
+pip install git+https://github.com/asanchez75/outlines-core@0.2.11
+#+end_src
+
+Verification and Important Note
+Your code should now run correctly with the patch.
+
+However, be aware that dependency analysis tools like pip check will likely
+still show the incompatibility warning. This is because the version metadata of
+the Git-installed package is still registered as 0.0.0.
+
+You can safely ignore this warning in this specific case, as you have manually
+ensured that the correct (patched) code is in place. The warning is cosmetic;
+the functionality will work as intended.
